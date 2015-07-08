@@ -76,18 +76,19 @@
 
 def reverse_in_place
 
-puts "Enter your string"
-str = gets.chomp.to_s
-mid = str.length/2
+	puts "Enter your string"
+	str = gets.chomp.to_s
+	mid = str.length/2
 
-(0...mid).each do |index| #0..mid is a range - we are moving through a range of numbers 
-  str[index], str[-index-1] = str[-index-1], str[index]  
-  # -index is a negative index, meaning you begin from the end of the string and move left   
-  # you must do a full swap for the change to stick 
-  # Will change the array within our loop: str[0], str[-1] = str[-1], str[0]
-  # Does not change array within loop: str[0] = str[-1]
-  end
-    puts str
+		(0...mid).each do |index| #0..mid is a range - we are moving through a range of numbers 
+		str[index], str[-index-1] = str[-index-1], str[index]  
+		# -index is a negative index, meaning you begin from the end of the string and move left   
+		# you must do a full swap for the change to stick, see next line A.  
+			# A. Will change the array within our loop: str[0], str[-1] = str[-1], str[0]
+			# B. Does not change array within loop: str[0] = str[-1]
+		end
+	
+	puts str
 end
 
 reverse_in_place
